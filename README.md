@@ -26,13 +26,16 @@ LLM은 그 자체로는 학습이 끝난 시점 이후의 정보, 즉 지금 이
 | **외부 데이터 연동 (External I/O)** | `requests` + `BeautifulSoup4` 로 실시간 웹 스크래핑, `zoneinfo` 로 시간대 변환, SQLite로 사내 DB 모사 |
 | **Toolkit 활용 (Built-in Toolkit)** | `SQLDatabaseToolkit` 의 4개 툴(`list_tables` / `schema` / `query_checker` / `query`)을 묶어 자연어 → SQL 자동 변환 |
 | **안전한 Agent 설계 (Safety Boundary)** | System Prompt와 dialect/top_k 주입으로 **READ-ONLY** 정책을 강제하여, 사용자가 삭제/수정을 요청해도 거절하도록 설계 |
+ddsfsddf
+---d dfsdfsdfs fds df s   sdfsf 
 
----
+e데코레이터, 타입 힌트, docstring을 정확히 작성하여 llm이 호출 시점인자 의미를 스스로 판단하도록 가이드
+외부 데이터 연동 으로 실시간 웹 스크래비 으로 시간대 변화.
 
 ## 📂 프로젝트 구조 (Project Structure)
 
 ```text
-22. langchain-agent-tool-integration/
+
 ├─ data/
 │  └─ modeun.db                              # SQLite 더미 DB (실행 시 자동 생성, gitignore 대상)
 ├─ results/
@@ -138,7 +141,7 @@ def get_usd_krw_exchange_rate() -> str:
     return target.get_text(strip=True) if target else "환율 정보를 찾을 수 없음"
 ```
 
-### 3. SQLDatabaseToolkit — 자연어 → SQL
+### 3. SQLDatabaseToolkit — 자연어 → SQL 
 
 ```python
 db = SQLDatabase.from_uri(f"sqlite:///{DB_PATH}")
